@@ -1,4 +1,4 @@
-from loginpage import *
+from registration_form import *
 from tkinter import *
 from PIL import ImageTk,Image
 
@@ -43,11 +43,23 @@ password_icon = PhotoImage(file = "icon/password.png")
 password_icon_label = Label(root, image = password_icon,bg = "#b7e3f0", fg ="#133342")
 password_icon_label.place(x =500, y = 365)
 
+#Creating Home Windows
+def login():
+    root.withdraw()
+    login_win = Toplevel()
+    login_win.geometry("1366x736")
+    login_win.title("Welcome to Online Education")
+    login_win.iconbitmap("icon/title_icon.ico")
+    messagebox.showinfo("Welcome","LOLOL",parent = login_win)
+    login_win.mainloop()
+
+
+
 #Adding Sign in button and registration form
-btn_signin = Button(root,command = show, text = "Log in",width = 15,bd = 3,relief =RAISED,font=("Ariel",10,"bold"), bg = "#f98135",fg = "#133342",activebackground = "#f98135",activeforeground = "#133342")
+btn_signin = Button(root,command = login,text = "Log in",width = 15,bd = 3,relief =RAISED,font=("Ariel",10,"bold"), bg = "#f98135",fg = "#133342",activebackground = "#f98135",activeforeground = "#133342")
 btn_signin.place(x = 615, y = 430)
-btn_signin = Button(root, text = "Create a new account",font=("Ariel",10,"bold"), bg = "#b7e3f0",fg = "#133342",borderwidth = 0,relief = RIDGE,activebackground = "#b7e3f0",activeforeground = "#133342")
-btn_signin.place(x = 500, y = 490)
+btn_signup = Button(root,command = form, text = "Create a new account",font=("Ariel",10,"bold"), bg = "#b7e3f0",fg = "#133342",borderwidth = 0,relief = RIDGE,activebackground = "#b7e3f0",activeforeground = "#133342")
+btn_signup.place(x = 500, y = 490)
 # Adding icon of facebook,twitter, instagram and linkedin
 facebook_icon = PhotoImage(file = "social_icon/facebook.png")
 btn_facebook = Button(root, image = facebook_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
