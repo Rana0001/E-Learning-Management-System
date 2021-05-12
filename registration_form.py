@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 
+
 def form():
     register_win = Toplevel()
     register_win.geometry("1366x736")
