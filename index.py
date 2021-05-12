@@ -54,7 +54,6 @@ def login():
     login_win.mainloop()
 
 
-
 #Adding Sign in button and registration form
 btn_signin = Button(root,command = login,text = "Log in",width = 15,bd = 3,relief =RAISED,font=("Ariel",10,"bold"), bg = "#f98135",fg = "#133342",activebackground = "#f98135",activeforeground = "#133342")
 btn_signin.place(x = 615, y = 430)
