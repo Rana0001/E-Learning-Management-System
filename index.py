@@ -2,6 +2,7 @@ from registration_form import *
 from tkinter import *
 from PIL import ImageTk,Image
 
+
 #Creating Tkinter Windows
 root = Tk()
 root.title("Self Learner")
@@ -45,12 +46,31 @@ password_icon_label.place(x =500, y = 365)
 
 #Creating Home Windows
 def login():
+    #Creating New Windows for Home Page
     root.withdraw()
     login_win = Toplevel()
-    login_win.geometry("1366x736")
+    login_win.config(bg="#f0f1f3")
+    login_win.geometry("1366x763")
     login_win.title("Welcome to Online Education")
     login_win.iconbitmap("icon/title_icon.ico")
-    messagebox.showinfo("Welcome","LOLOL",parent = login_win)
+
+    #Inserting and resizing Image Banner for Home windows....
+    img_bg = Image.open("background_images/banner.png")
+    img_bg_resize = img_bg.resize((1366,325),Image.ADAPTIVE)
+    resized = ImageTk.PhotoImage(img_bg_resize)
+    banner_label = Label(login_win, image = resized)
+    banner_label.place(x= 0 , y = 0)
+    player_bg = Image.open("background_images/mobile2.png")
+    player_bg_resize = player_bg.resize((500,250),Image.ADAPTIVE)
+    resized_player = ImageTk.PhotoImage(player_bg_resize)
+    player_label = Label(login_win, image = resized_player)
+    player_label.place(x= 400 , y = 300)
+
+    video_unavailable = Label(login_win, text = "Video Not Available",width = 15,font=("Ariel",20,"bold italic"))
+    video_unavailable.place(x = 500,y = 400)
+
+
+    print("Login Successful")
     login_win.mainloop()
 
 
@@ -59,6 +79,7 @@ btn_signin = Button(root,command = login,text = "Log in",width = 15,bd = 3,relie
 btn_signin.place(x = 615, y = 430)
 btn_signup = Button(root,command = form, text = "Create a new account",font=("Ariel",10,"bold"), bg = "#b7e3f0",fg = "#133342",borderwidth = 0,relief = RIDGE,activebackground = "#b7e3f0",activeforeground = "#133342")
 btn_signup.place(x = 500, y = 490)
+
 # Adding icon of facebook,twitter, instagram and linkedin
 facebook_icon = PhotoImage(file = "social_icon/facebook.png")
 btn_facebook = Button(root, image = facebook_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
