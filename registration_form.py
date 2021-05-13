@@ -14,6 +14,7 @@ def form():
         messagebox.showinfo("         Sign up        ", " Sign up Successful ",parent = register_win)
         register_win.withdraw()
 
+
     #Adding Images
     signup_image = Image.open("background_images/page1.png")
     signup_image_resize = signup_image.resize((550,550),Image.ADAPTIVE)
