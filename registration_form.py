@@ -10,6 +10,9 @@ def form():
     register_win.iconbitmap("icon/title_icon.ico")
     register_win.config(bg = "#eae8ed")
      #Defining fucntion for message and destroying registration windows
+    def signup():
+        messagebox.showinfo("         Sign up        ", " Sign up Successful ",parent = register_win)
+        register_win.withdraw()
 
     #Adding Images
     signup_image = Image.open("background_images/page1.png")
@@ -75,7 +78,7 @@ def form():
     check_terms.place(x= 760, y = 480,height = 35)
 
 
-    btn_signup = Button(register_win,text = "Sign Up" ,width = 15, relief = RAISED,bg = "#785dae",fg = "#fafafc",activebackground = "#785dae",activeforeground ="#fafafc",font = ("Ariel",10,"italic"))
+    btn_signup = Button(register_win,command = signup,text = "Sign Up" ,width = 15, relief = RAISED,bg = "#785dae",fg = "#fafafc",activebackground = "#785dae",activeforeground ="#fafafc",font = ("Ariel",10,"italic"))
     btn_signup.place(x = 920 , y =530,height  = 40)
     register_win.mainloop()
 
