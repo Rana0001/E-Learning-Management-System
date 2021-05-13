@@ -1,6 +1,8 @@
+import sqlite3
 from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
+
 
 def form():
     #Creating new windows for registration form
@@ -9,10 +11,25 @@ def form():
     register_win.title("Sign Up")
     register_win.iconbitmap("icon/title_icon.ico")
     register_win.config(bg = "#eae8ed")
-     #Defining fucntion for message and destroying registration windows
+    #Defining fucntion for inserting value in database, showing innfo and destroying registration windows
     def signup():
-        messagebox.showinfo("         Sign up        ", " Sign up Successful ",parent = register_win)
+        conn = sqlite3.connect(("registration.db"))
+        c = conn.cursor()
+        c.execute("INSERT INTO signup_form VALUES (:first_name,:last_name,:email_name,:new_password,:postal_number,:address_name,:contact_number)",{
+            'first_name': first_input.get(),
+            'last_name': last_input.get(),
+            'email_name': email_input.get(),
+            'new_password': new_password_input.get(),
+            'postal_number': postalcode_input.get(),
+            'address_name': address_input.get(),
+            'contact_number': contact_input.get()
+
+        })
+        conn.commit()
+        conn.close()
+        messagebox.showinfo("Data Inserted", "Sign up Successful",parent = register_win)
         register_win.withdraw()
+
 
 
     #Adding Images
@@ -41,10 +58,10 @@ def form():
     last_name.place(x=985, y=200)
     last_input = Entry(register_win, width = 25,font=("Ariel",11),relief = GROOVE,bg = "#f7f7f7",fg ="black")
     last_input.place(x = 990, y = 230,height = 25)
-    Email_name = Label(register_win, text="Email: ", width=5, font=("Ariel", 13, "bold"), fg="#fbfbfd",bg="#bfb5f4")
-    Email_name.place(x=759, y=270)
-    Email_input = Entry(register_win, width=40, font=("Ariel", 11), relief=GROOVE, bg="#f7f7f7", fg="black")
-    Email_input.place(x=760, y=300, height = 25)
+    email_name = Label(register_win, text="Email: ", width=5, font=("Ariel", 13, "bold"), fg="#fbfbfd",bg="#bfb5f4")
+    email_name.place(x=759, y=270)
+    email_input = Entry(register_win, width=40, font=("Ariel", 11), relief=GROOVE, bg="#f7f7f7", fg="black")
+    email_input.place(x=760, y=300, height = 25)
 
     #Creating drop down for Gender(Male/ Female)
     gender_list = ["Male","Female","Not Specified"]
@@ -66,7 +83,7 @@ def form():
     postalcode_input.place(x=990, y=370,height = 25)
     address_name = Label(register_win, text="Address: ", width=8, font=("Ariel", 13, "bold"), fg="#fbfbfd",bg="#bfb5f4")
     address_name.place(x=755, y=410)
-    address_input = Entry(register_win, width=25, font=("Ariel", 11), show="*", relief=GROOVE, bg="#f7f7f7",fg="black")
+    address_input = Entry(register_win, width=25, font=("Ariel", 11), relief=GROOVE, bg="#f7f7f7",fg="black")
     address_input.place(x=760, y=440, height=25)
     contact_no = Label(register_win, text="Contact No: ", width=12, font=("Ariel", 13, "bold"), fg="#fbfbfd",bg="#bfb5f4")
     contact_no.place(x=981, y=410)
