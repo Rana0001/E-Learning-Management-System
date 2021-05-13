@@ -49,28 +49,38 @@ def login():
     #Creating New Windows for Home Page
     root.withdraw()
     login_win = Toplevel()
-    login_win.config(bg="#f0f1f3")
+    login_win.config(bg="#d190e2")
     login_win.geometry("1366x763")
     login_win.title("Welcome to Online Education")
     login_win.iconbitmap("icon/title_icon.ico")
 
     #Inserting and resizing Image Banner for Home windows....
-    img_bg = Image.open("background_images/banner.png")
-    img_bg_resize = img_bg.resize((1366,325),Image.ADAPTIVE)
-    resized = ImageTk.PhotoImage(img_bg_resize)
-    banner_label = Label(login_win, image = resized)
-    banner_label.place(x= 0 , y = 0)
-    player_bg = Image.open("background_images/mobile2.png")
-    player_bg_resize = player_bg.resize((500,250),Image.ADAPTIVE)
-    resized_player = ImageTk.PhotoImage(player_bg_resize)
-    player_label = Label(login_win, image = resized_player)
-    player_label.place(x= 400 , y = 300)
-
-    video_unavailable = Label(login_win, text = "Video Not Available",width = 15,font=("Ariel",20,"bold italic"))
-    video_unavailable.place(x = 500,y = 400)
-
-
-    print("Login Successful")
+    # img_bg = Image.open("background_images/banner.png")
+    # img_bg_resize = img_bg.resize((1366,325),Image.ADAPTIVE)
+    # resized = ImageTk.PhotoImage(img_bg_resize)
+    # banner_label = Label(login_win, image = resized)
+    # banner_label.place(x= 0 , y = 0)
+    # player_bg = Image.open("background_images/mobile2.png")
+    # player_bg_resize = player_bg.resize((500,250),Image.ADAPTIVE)
+    # resized_player = ImageTk.PhotoImage(player_bg_resize)
+    # player_label = Label(login_win, image = resized_player)
+    # player_label.place(x= 450 , y = 325)
+    #
+    # #Inserting images for slides.
+    # first_slide = Image.open("image_slides/page2.png")
+    # first_slide_resized = first_slide.resize((390,200),Image.ADAPTIVE)
+    # first_resized = ImageTk.PhotoImage(first_slide_resized)
+    # second_slide = Image.open("image_slides/page3.png")
+    # second_slide_resized = second_slide.resize((390,200),Image.ADAPTIVE)
+    # second_resized = ImageTk.PhotoImage(second_slide_resized)
+    # third_slide = Image.open("image_slides/EducationLaptop01.png")
+    # third_slide_resized = third_slide.resize((390,200),Image.ADAPTIVE)
+    # third_resized = ImageTk.PhotoImage(third_slide_resized)
+    # image_slide = Label(login_win, image = first_resized)
+    # image_slide.place(x = 505,y = 350)
+    #
+    #
+    # print("Login Successful")
     login_win.mainloop()
 
 
@@ -82,16 +92,16 @@ btn_signup.place(x = 500, y = 490)
 
 # Adding icon of facebook,twitter, instagram and linkedin
 facebook_icon = PhotoImage(file = "social_icon/facebook.png")
-btn_facebook = Button(root, image = facebook_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
+btn_facebook = Button(root, image = facebook_icon , command = form,bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
 btn_facebook.place(x = 505, y = 520)
 google_icon = PhotoImage(file = "social_icon/google.png")
-btn_google = Button(root, image = google_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
+btn_google = Button(root, image = google_icon , bg = "#b7e3f0", command = form,relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
 btn_google.place(x = 560, y = 520)
 instagram_icon = PhotoImage(file = "social_icon/instagram.png")
-btn_instagram = Button(root, image = instagram_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
+btn_instagram = Button(root, image = instagram_icon , bg = "#b7e3f0", command = form,relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
 btn_instagram.place(x = 610, y = 520)
 twitter_icon = PhotoImage(file = "social_icon/twitter.png")
-btn_twitter = Button(root, image = twitter_icon , bg = "#b7e3f0", relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
+btn_twitter = Button(root, image = twitter_icon , bg = "#b7e3f0", command = form,relief =GROOVE,borderwidth = 0,activebackground = "#b7e3f0",activeforeground = "#133342")
 btn_twitter.place(x = 660, y = 520)
 
 root.mainloop()
