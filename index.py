@@ -1,7 +1,7 @@
 from registration_form import *
 from tkinter import *
 from PIL import ImageTk,Image
-
+import sqlite3
 
 #Creating Tkinter Windows
 root = Tk()
@@ -46,43 +46,16 @@ password_icon_label.place(x =500, y = 365)
 
 #Creating Home Windows
 def login():
-    #Creating New Windows for Home Page
-    root.withdraw()
-    login_win = Toplevel()
-    login_win.config(bg="#d190e2")
-    login_win.geometry("1366x763")
-    login_win.title("Welcome to Online Education")
-    login_win.iconbitmap("icon/title_icon.ico")
-
-    #Inserting and resizing Image Banner for Home windows....
-    # img_bg = Image.open("background_images/banner.png")
-    # img_bg_resize = img_bg.resize((1366,325),Image.ADAPTIVE)
-    # resized = ImageTk.PhotoImage(img_bg_resize)
-    # banner_label = Label(login_win, image = resized)
-    # banner_label.place(x= 0 , y = 0)
-    # player_bg = Image.open("background_images/mobile2.png")
-    # player_bg_resize = player_bg.resize((500,250),Image.ADAPTIVE)
-    # resized_player = ImageTk.PhotoImage(player_bg_resize)
-    # player_label = Label(login_win, image = resized_player)
-    # player_label.place(x= 450 , y = 325)
-    #
-    # #Inserting images for slides.
-    # first_slide = Image.open("image_slides/page2.png")
-    # first_slide_resized = first_slide.resize((390,200),Image.ADAPTIVE)
-    # first_resized = ImageTk.PhotoImage(first_slide_resized)
-    # second_slide = Image.open("image_slides/page3.png")
-    # second_slide_resized = second_slide.resize((390,200),Image.ADAPTIVE)
-    # second_resized = ImageTk.PhotoImage(second_slide_resized)
-    # third_slide = Image.open("image_slides/EducationLaptop01.png")
-    # third_slide_resized = third_slide.resize((390,200),Image.ADAPTIVE)
-    # third_resized = ImageTk.PhotoImage(third_slide_resized)
-    # image_slide = Label(login_win, image = first_resized)
-    # image_slide.place(x = 505,y = 350)
-    #
-    #
-    # print("Login Successful")
-    login_win.mainloop()
-
+    conn = sqlite3.connect(("registration.db"))
+    c = conn.cursor()
+    c.execute('SELECT *,oid FROM signup_form')
+    data = c.fetchall()
+    for user_data in data:
+        if str(user_data[2]) == username_field.get() and str(user_data[3]) == password_field.get():
+            messagebox.showinfo("      Login        ","Login Successful")
+            root.withdraw()
+        else:
+            messagebox.showinfo("    Login     ","Please! Check your email and password.")
 
 #Adding Sign in button and registration form
 btn_signin = Button(root,command = login,text = "Log in",width = 15,bd = 3,relief =RAISED,font=("Ariel",10,"bold"), bg = "#f98135",fg = "#133342",activebackground = "#f98135",activeforeground = "#133342")
