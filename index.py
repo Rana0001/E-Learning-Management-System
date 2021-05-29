@@ -57,8 +57,9 @@ def login():
         if str(user_data[2]) == username_field.get() and str(user_data[3]) == password_field.get():
             try:
                 messagebox.showinfo("      Login        ", "Login Successful")
+                root.withdraw()
                 return home.main()
-                # root.withdraw()
+
             finally:
                 pass
     messagebox.showinfo("    Login     ", "Please! Check your email and password.", parent=root)

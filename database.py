@@ -9,7 +9,8 @@ c.execute("""CREATE TABLE IF NOT EXISTS signup_form(
             new_password text,
             postal_number integer,
             address_name text,
-            contact_number integer
+            contact_number integer,
+            gender integer
 
 
 )""")
