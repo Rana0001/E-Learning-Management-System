@@ -13,14 +13,14 @@ home.iconbitmap("icon/title_icon.ico")
 def ask_pass(e):
     e.insert(0,"Enter your password")
 def update_data():
+    key = Toplevel()
 
-    info_box = messagebox.askquestion("Confirmation Message","Enter your password")
     conn = sqlite3.connect("registration.db")
     c = conn.cursor()
     record_pass =
     c.execute("SELECT * ,oid FROM signup_form WHERE password = " + new_password)
     record = c.fetchall()
-
+    key
 
 # Inserting Background Image
 main_image = Image.open("images/bg.png")
