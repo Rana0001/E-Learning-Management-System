@@ -18,7 +18,7 @@ def form():
         c = conn.cursor()
         c.execute(
             "INSERT INTO signup_form VALUES (:first_name,:last_name,:email_name,"
-            ":new_password,:postal_number,:address_name,:contact_number)",
+            ":new_password,:postal_number,:address_name,:contact_number,:gender)",
             {
                 'first_name': first_input.get(),
                 'last_name': last_input.get(),
@@ -26,8 +26,8 @@ def form():
                 'new_password': new_password_input.get(),
                 'postal_number': postal_code_input.get(),
                 'address_name': address_input.get(),
-                'contact_number': contact_input.get()
-
+                'contact_number': contact_input.get(),
+                'gender':clicked.get()
             })
         conn.commit()
         conn.close()
