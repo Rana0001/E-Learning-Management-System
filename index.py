@@ -3,13 +3,60 @@ from registration_form import *
 from tkinter import *
 from PIL import ImageTk, Image
 import sqlite3
-import home
+
+# import home
 
 # Creating Tkinter Windows
 root = Tk()
 root.title("Self Learner")
 root.geometry("1290x1080")
 root.iconbitmap("icon/title_icon.ico")
+
+
+# Defining funtion for forget password
+def forget():
+    lost = Toplevel()
+    lost.title("Forget your password?")
+    lost.iconbitmap("icon/title_icon.ico")
+    lost.geometry("600x600")
+    lost.resizable(0, 0)
+
+    # Defining function for show password
+    def show_pass():
+        conn = sqlite3.connect("registration.db")
+        c = conn.cursor()
+        record_files = uid_user.get()
+        c.execute("SELECT *,oid FROM signup_form")
+        data = c.fetchall()
+        for data_user in data:
+            if str(data_user[2]) == forget_user.get() and str(data_user[-1]) == uid_user.get():
+                try:
+                    messagebox.showinfo("Notice", f"Your password is {data_user[3]}")
+                    lost.withdraw()
+                    return 0
+                except:
+                    pass
+        messagebox.showinfo("Try Again!", "Please Entered Correct UserName and UID...", parent=lost)
+
+    lost_image = Image.open("images/forget.png")
+    lost_resized = lost_image.resize((600, 700), Image.ADAPTIVE)
+    lost_real = ImageTk.PhotoImage(lost_resized)
+    lost_image_label = Label(lost, image=lost_real, bd=0)
+    lost_image_label.place(x=0, y=0, relheight=1, relwidth=1)
+    forget_label = Label(lost, text="Enter your username:", bg="white", fg="black", bd=0, font=("Ariel", 11, "bold"))
+    forget_label.place(x=265, y=254)
+    uid_label = Label(lost, text="  Enter your uid: ", bg="white", fg="black", bd=0, font=("Ariel", 11, "bold"))
+    uid_label.place(x=255, y=315)
+    forget_user = Entry(lost, width="27", bd=2, font=("Ariel", 10))
+    forget_user.place(x=260, y=280, height=30)
+    uid_user = Entry(lost, width="27", bd=2, font=("Ariel", 10))
+    uid_user.place(x=260, y=340, height=30)
+    show_password = Button(lost, command=show_pass, text="Show Password", bg="#fad300", width=18, fg="#ffffff",
+                           activebackground="#fad300", activeforeground="#ffffff", relief=RAISED)
+    show_password.place(x=285, y=408)
+    lost.mainloop()
+
+
 # Adding Background Image
 bg_image = Image.open("images/background.png")
 bg_image_resized = bg_image.resize((1366, 768), Image.ADAPTIVE)
@@ -69,9 +116,10 @@ def login():
 btn_sign_in = Button(root, command=login, text="Log in", width=15, bd=3, relief=RAISED, font=("Ariel", 10, "bold"),
                      bg="#f98135", fg="#133342", activebackground="#f98135", activeforeground="#133342")
 btn_sign_in.place(x=615, y=450)
-btn_signup = Button(root, command=form, text="Forget Password?", font=("Ariel", 10, "bold"), bg="#b7e3f0", fg="#133342",
+btn_forget = Button(root, command=forget, text="Forget Password?", font=("Ariel", 10, "bold"), bg="#b7e3f0",
+                    fg="#133342",
                     borderwidth=0, relief=RIDGE, activebackground="#b7e3f0", activeforeground="#133342")
-btn_signup.place(x=500, y=420)
+btn_forget.place(x=500, y=420)
 
 btn_signup = Button(root, command=form, text="Create a new account", font=("Ariel", 10, "bold"), bg="#b7e3f0",
                     fg="#133342", borderwidth=0, relief=RIDGE, activebackground="#b7e3f0", activeforeground="#133342")

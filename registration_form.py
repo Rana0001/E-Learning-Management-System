@@ -31,6 +31,13 @@ def form():
             })
         conn.commit()
         conn.close()
+        conn = sqlite3.connect("registration.db")
+        c = conn.cursor()
+        c.execute('SELECT *,oid FROM signup_form')
+        data = c.fetchall()
+        conn.commit()
+        conn.close()
+        messagebox.showinfo(" Alert! ", f"Your uid is {data[-1][-1]}",parent =register_win)
         messagebox.showinfo("Data Inserted", "Sign up Successful", parent=register_win)
         register_win.withdraw()
 
