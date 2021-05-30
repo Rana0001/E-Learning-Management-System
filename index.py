@@ -1,10 +1,10 @@
 # Import tkinter,image and sqlite 3
 from registration_form import *
+import home
 from tkinter import *
 from PIL import ImageTk, Image
 import sqlite3
 
-# import home
 
 # Creating Tkinter Windows
 root = Tk()
@@ -31,7 +31,7 @@ def forget():
         for data_user in data:
             if str(data_user[2]) == forget_user.get() and str(data_user[-1]) == uid_user.get():
                 try:
-                    messagebox.showinfo("Notice", f"Your password is {data_user[3]}")
+                    messagebox.showinfo("Notice", f"Your password is: {data_user[3]}")
                     lost.withdraw()
                     return 0
                 except:
