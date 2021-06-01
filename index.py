@@ -23,11 +23,13 @@ def forget():
 
     # Defining function for show password
     def show_pass():
-        conn = sqlite3.connect("registration.db")
-        c = conn.cursor()
+        global c4
+        global conn4
+        conn4 = sqlite3.connect("registration.db")
+        c4 = conn4.cursor()
         record_files = uid_user.get()
-        c.execute("SELECT *,oid FROM signup_form")
-        data = c.fetchall()
+        c4.execute("SELECT *,oid FROM signup_form")
+        data = c4.fetchall()
         for data_user in data:
             if str(data_user[2]) == forget_user.get() and str(data_user[-1]) == uid_user.get():
                 try:
@@ -37,7 +39,8 @@ def forget():
                 except:
                     pass
         messagebox.showinfo("Try Again!", "Please Entered Correct UserName and UID...", parent=lost)
-
+        conn4.commit()
+        conn4.close()
     lost_image = Image.open("images/forget.png")
     lost_resized = lost_image.resize((600, 700), Image.ADAPTIVE)
     lost_real = ImageTk.PhotoImage(lost_resized)
@@ -96,10 +99,12 @@ password_icon_label.place(x=500, y=365)
 
 # Creating Home Windows
 def login():
-    conn = sqlite3.connect("registration.db")
-    c = conn.cursor()
-    c.execute('SELECT *,oid FROM signup_form')
-    data = c.fetchall()
+    global conn5
+    global c5
+    conn5 = sqlite3.connect("registration.db")
+    c5 = conn5.cursor()
+    c5.execute('SELECT *,oid FROM signup_form')
+    data = c5.fetchall()
     for user_data in data:
         if str(user_data[2]) == username_field.get() and str(user_data[3]) == password_field.get():
             try:
@@ -110,7 +115,8 @@ def login():
             finally:
                 pass
     messagebox.showinfo("    Login     ", "Please! Check your email and password.", parent=root)
-
+    conn5.commit()
+    conn5.close()
 
 # Adding Sign in button and registration form
 btn_sign_in = Button(root, command=login, text="Log in", width=15, bd=3, relief=RAISED, font=("Ariel", 10, "bold"),
