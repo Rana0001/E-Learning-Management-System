@@ -5,7 +5,6 @@ from tkinter import *
 from PIL import ImageTk, Image
 import sqlite3
 
-
 # Creating Tkinter Windows
 root = Tk()
 root.title("Self Learner")
@@ -41,6 +40,7 @@ def forget():
         messagebox.showinfo("Try Again!", "Please Entered Correct UserName and UID...", parent=lost)
         conn4.commit()
         conn4.close()
+
     lost_image = Image.open("images/forget.png")
     lost_resized = lost_image.resize((600, 700), Image.ADAPTIVE)
     lost_real = ImageTk.PhotoImage(lost_resized)
@@ -117,6 +117,7 @@ def login():
     messagebox.showinfo("    Login     ", "Please! Check your email and password.", parent=root)
     conn5.commit()
     conn5.close()
+
 
 # Adding Sign in button and registration form
 btn_sign_in = Button(root, command=login, text="Log in", width=15, bd=3, relief=RAISED, font=("Ariel", 10, "bold"),

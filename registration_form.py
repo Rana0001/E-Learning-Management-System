@@ -27,7 +27,7 @@ def form():
                 'postal_number': postal_code_input.get(),
                 'address_name': address_input.get(),
                 'contact_number': contact_input.get(),
-                'gender':clicked.get()
+                'gender': clicked.get()
             })
         conn.commit()
         conn.close()
@@ -37,7 +37,7 @@ def form():
         data = c.fetchall()
         conn.commit()
         conn.close()
-        messagebox.showinfo(" Alert! ", f"Your uid is {data[-1][-1]}",parent =register_win)
+        messagebox.showinfo(" Alert! ", f"Your uid is {data[-1][-1]}", parent=register_win)
         messagebox.showinfo("Data Inserted", "Sign up Successful", parent=register_win)
         register_win.withdraw()
 
