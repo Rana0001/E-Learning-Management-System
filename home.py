@@ -1,4 +1,23 @@
 from index import *
+def data_insert(first,last,user_name,password):
+    conn7 = sqlite3.connect("registration.db")
+    c7 = conn7.cursor()
+    query=("INSERT INTO signup_form"
+               "(first_name,last_name,user_name,new_password)"
+               "VALUES(?,?,?,?)")
+    values = (first,last,user_name,password)
+    c7.execute(query,values)
+def show_login_result(user_name,password):
+    conn6 = sqlite3.connect("registration.db")
+    c6 = conn6.cursor()
+    c6.execute("SELECT * FROM signup_form WHERE user_name = ? and new_password = ?",(user_name,password))
+    check = c6.fetchall()
+    if check:
+        return "Pass"
+    else:
+        return "Fail"
+
+
 
 def main():
     home = Toplevel()
@@ -99,10 +118,10 @@ def main():
         key.resizable(0, 0)
 
         def update_new():
-            conn = sqlite3.connect("registration.db")
-            c = conn.cursor()
+            conn1 = sqlite3.connect("registration.db")
+            c1 = conn1.cursor()
             data = special_id.get()
-            c.execute("""UPDATE signup_form SET
+            c1.execute("""UPDATE signup_form SET
             first_name = :first,
             last_name = :last,
             user_name = :email,
@@ -122,8 +141,8 @@ def main():
                        'oid': data
                        })
 
-            conn.commit()
-            conn.close()
+            conn1.commit()
+            conn1.close()
             messagebox.showinfo("Data Updated!", "Save Completed....")
 
         def edit_data():
@@ -131,15 +150,15 @@ def main():
             edit.geometry("1366x736")
             edit.iconbitmap("icon/title_icon.ico")
             edit.config(bg="#d7e9ff")
-            conn = sqlite3.connect("registration.db")
-            c = conn.cursor()
+            conn2 = sqlite3.connect("registration.db")
+            c2 = conn2.cursor()
             record_id = special_id.get()
 
-            c.execute("SELECT * FROM signup_form WHERE oid = " + record_id)
+            c2.execute("SELECT * FROM signup_form WHERE oid = " + record_id)
 
-            newrecord = c.fetchall()
-            conn.commit()
-            conn.close()
+            newrecord = c2.fetchall()
+            conn2.commit()
+            conn2.close()
             # Creating Global variable to fetch the variable in another function
             global first_input_edit
             global last_input_edit
@@ -218,10 +237,10 @@ def main():
             edit.mainloop()
 
         def confirm():
-            conn = sqlite3.connect("registration.db")
-            c = conn.cursor()
-            c.execute('SELECT *,oid FROM signup_form')
-            data = c.fetchall()
+            conn3 = sqlite3.connect("registration.db")
+            c3 = conn3.cursor()
+            c3.execute('SELECT *,oid FROM signup_form')
+            data = c3.fetchall()
 
             for user_data in data:
                 if str(user_data[3]) == password_id.get() and str(user_data[-1]) == special_id.get():
@@ -232,8 +251,8 @@ def main():
                         pass
             messagebox.showinfo("    Incorrect Password!!    ", "Please! Retry your password.", parent=key)
 
-            conn.commit()
-            conn.close()
+            conn3.commit()
+            conn3.close()
 
         password_image = Image.open("images/password.png")
         password_resized = password_image.resize((600, 500), Image.ADAPTIVE)
