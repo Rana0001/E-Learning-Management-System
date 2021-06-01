@@ -1,5 +1,6 @@
 from index import *
 
+
 def main():
     home = Toplevel()
     home.title("Self Learner")
