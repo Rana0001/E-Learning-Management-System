@@ -17,7 +17,10 @@ E-Learning Management System is a script application for online learning that is
 <div>
 You can directly download tools via the link below:<br>
 <ol>
- <li><a href = "https://www.python.org/downloads/"> Python:</a> &nbsp; Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.</li>
- <li><a href = "https://www.jetbrains.com/pycharm/download/#section=windows"> Pycharm: </a> &nbsp; PyCharm is an integrated development environment used in computer programming, specifically for the Python language. It is developed by the Czech company JetBrains.</li>
+ <li><a href = "https://www.python.org/downloads/"> Python</a> :&nbsp; Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.</li>
+ <li><a href = "https://www.jetbrains.com/pycharm/download/#section=windows"> Pycharm </a> :&nbsp;  PyCharm is an integrated development environment used in computer programming, specifically for the Python language. It is developed by the Czech company JetBrains.</li>
+ <li>Tkinter :&nbsp; Tkinter is a Python binding to the Tk GUI toolkit. It is the standard Python interface to the Tk GUI toolkit, and is Python's de facto standard GUI. Tkinter is included with standard Linux, Microsoft Windows and Mac OS X installs of Python. The name Tkinter comes from Tk interface. </li>
+<li>Pytest :&nbsp;PyTest is a testing framework that allows users to write test codes using Python programming language. It helps you to write simple and scalable test cases for databases, APIs, or UI. PyTest is mainly used for writing tests for APIs. It helps to write tests from simple unit tests to complex functional tests.</li>
+ 
  </ol>
  </div><br>
