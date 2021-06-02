@@ -2,7 +2,7 @@
 <br>
 <p align ="right"><b><i>Developed by Prashant Rana Magar</b></i></p>
 <br>
-<h1><b><i>&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;E-Learning Management System</b></i></h1>
+<h1><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-Learning Management System</b></i></h1>
 <br>
 
 <p align = "center">
