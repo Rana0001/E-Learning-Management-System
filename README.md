@@ -14,7 +14,7 @@
 E-Learning Management System is a script application for online learning that is available on the open market. Teachers and students throughout colleges, schools, and coaching programs are joined to share information via a system-based structured course. This application is only for educators and students active in the sector of online education.</div>
 <br>
 <h1><i><u>Tools Requirement</u></i></h1><br>
-<div align ="center">
+<div>
 You can directly download tools via the link below:<br>
 <ol>
  <li><a href = "https://www.python.org/downloads/"> Python:</a> &nbsp; Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation.</li>
