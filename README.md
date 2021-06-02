@@ -1,7 +1,8 @@
 <h1><b><i>Final Project of Computing Activity Led Learning</i></b></h1>
 <br>
+<p align ="right"><b><i>Developed by Prashant Rana Magar</b></i></p>
 <br>
-<p align = "center"><h1><b><i>E-Learning Management System</b></i></h1></p>
+<h1><b><i>&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;&nsbp;E-Learning Management System</b></i></h1>
 <br>
 
 <p align = "center">
