@@ -40,13 +40,16 @@ You can directly download tools via the link below:<br>
  4.Step 4: Now, you can use tkinter GUI library.<br>
  
  <h1><i>Some of the Screenshots of E-learning Management System</i></h1><br>
-<div>
-<img src ="https://user-images.githubusercontent.com/51354885/120468263-bef81a80-c3c0-11eb-8b01-1d2712b47db5.jpg" height="400" width = "400">
- <p align="right"><img src ="https://user-images.githubusercontent.com/51354885/120468574-126a6880-c3c1-11eb-9a5f-83e27565ad30.png" height="400" width = "400"></p>
-
- <p align="left"><img src ="https://user-images.githubusercontent.com/51354885/120468656-2b731980-c3c1-11eb-86b4-449c12c8f25f.jpg" height="400" width = "400"></p>
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/51354885/120468263-bef81a80-c3c0-11eb-8b01-1d2712b47db5.jpg" width="500" height="400"></td>
+    <td><img src="https://user-images.githubusercontent.com/51354885/120468574-126a6880-c3c1-11eb-9a5f-83e27565ad30.png" width="500" height="400"></td>
+  </tr></table><br>
  
- <p align="right"><img src ="https://user-images.githubusercontent.com/51354885/120468740-46de2480-c3c1-11eb-86ec-506bda8f2d7f.jpg" height="400" width = "400"></p>
- 
+<table>
+  <tr>
+    <td><img src="https://user-images.githubusercontent.com/51354885/120468656-2b731980-c3c1-11eb-86b4-449c12c8f25f.jpg" width="500" height="400"></td>
+    <td><img src="https://user-images.githubusercontent.com/51354885/120468740-46de2480-c3c1-11eb-86ec-506bda8f2d7f.jpg" width="500" height="400"></td>
+  </tr></table><br>
  <p align="center"><img src ="https://user-images.githubusercontent.com/51354885/120468904-73923c00-c3c1-11eb-9acc-034381319daf.jpg" height="400" width = "400"></p>
 </div>
