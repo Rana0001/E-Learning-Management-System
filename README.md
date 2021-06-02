@@ -1,7 +1,7 @@
 <h1><b><i>Final Project of Computing Activity Led Learning</i></b></h1>
 <br>
 <br>
-<h1><b><i>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; E-Learning Management System</b></i></h1>
+<p align = "center"/><h1><b><i>E-Learning Management System</b></i></h1>
 <br>
 
 <p align = "center">
@@ -36,8 +36,9 @@ You can directly download tools via the link below:<br>
  3.Step 3: Go to Terminal and install PIL (to import images in tkinter windows).<br>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
  <p align ="center">In terminal write :- pip install PIL<br>
- After installation is complete, write from PIL import ImageTk,Image in your file.</p>
+ After installation is complete, write :- from PIL import ImageTk,Image in your file.</p>
  ------------------------------------------------------------------------------------------------------------------------------------------------------------ 
- 4.Step 4: Now, you can use tkinter GUI library.
+ 4.Step 4: Now, you can use tkinter GUI library.<br>
  
+ <h1><i>Some of the Screenshots of E-learning Management System</i></h1>
  
