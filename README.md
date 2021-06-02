@@ -24,3 +24,12 @@ You can directly download tools via the link below:<br>
  
  </ol>
  </div><br>
+<h1>Installation and Importing Module</h1><br>
+<div>First of all install Pycharm and Python from above link.<br>
+1.Step 1:- Create New Project in Pycharm IDE.<br>
+2.Step 2:- Import tkinter.<br>
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
+ import tkinter
+ or
+ from tkinter import *
+ ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br>
