@@ -1,7 +1,7 @@
 <h1><b><i>Final Project of Computing Activity Led Learning</i></b></h1>
 <br>
 <br>
-<p align = "center"/><h1><b><i>E-Learning Management System</b></i></h1>
+<p align = "center"><h1><b><i>E-Learning Management System</b></i></h1></p>
 <br>
 
 <p align = "center">
@@ -42,3 +42,17 @@ You can directly download tools via the link below:<br>
  
  <h1><i>Some of the Screenshots of E-learning Management System</i></h1>
  
+<p align="center">
+
+ 
+![ui](https://user-images.githubusercontent.com/51354885/120467910-5ad55680-c3c0-11eb-8605-1af6f592f140.jpg=500x500)
+
+ 
+ </p>
+ <p align="center"></p>
+ <p align="center"></p>
+ 
+ <p align="center"></p>
+
+ 
+ <p align="center"></p>
