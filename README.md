@@ -1,10 +1,8 @@
 <h1><b><i>Final Project of Computing Activity Led Learning</i></b></h1>
 <br>
 <p align ="right"><b><i>Developed by Prashant Rana Magar</b></i></p>
+<h1><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-Learning Management System</b></i></h1>
 <br>
-<h1><b><i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E-Learning Management System</b></i></h1>
-<br>
-
 <p align = "center">
 <img src="https://user-images.githubusercontent.com/51354885/120460210-a257e480-c3b8-11eb-9f37-3e278ab69db9.jpg" height = "400" width = "500"/></p>
 
